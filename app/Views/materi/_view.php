@@ -15,8 +15,8 @@
             <?php endif; ?>
             <a href="<?= base_url(); ?>/materi/create" class="btn btn-primary btn-sm">Upload</a>
             <hr />
-            <table class="table table-bordered">
-                <thead>
+            <table class="table table-bordered table-hover">
+                <thead class="thead-light ">
                     <tr>
                         <th>No</th>
                         <th>Nama Materi</th>
@@ -24,7 +24,7 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-sm">
 
                     <?php
                     $i = 1 + (10 * ($curentPage - 1));
@@ -36,8 +36,8 @@
                             <td><?= $row->nama_materi; ?></td>
                             <td><?= $row->group_materi; ?></td>
                             <td>
-                                <!-- <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview">Baca</a> -->
-                                <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/download/<?= $row->nama_materi; ?>">Download</a>
+                                <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/upload/<?= $row->nama_materi; ?>" target="_BLANK">Baca</a>
+                                <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/download/<?= $row->id; ?>">Download</a>
                                 <!-- <a class="btn btn-danger" href="<?= base_url(); ?>/materi/delete/<?= $row->id; ?>">Delete</a> -->
                                 <form action="<?= base_url(); ?>/materi/delete/<?= $row->id; ?>" method="POST" class="d-inline">
                                     <?= csrf_field(); ?>

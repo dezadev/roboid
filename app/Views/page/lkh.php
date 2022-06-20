@@ -38,8 +38,8 @@
                                     <td><?= $row->nama_materi; ?></td>
                                     <td><?= $row->group_materi; ?></td>
                                     <td>
-                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview/<?= $row->id; ?>">Baca</a>
-                                        <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/download/<?= $row->nama_materi; ?>">Download</a>
+                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/upload/<?= $row->nama_materi; ?>" target="_BLANK">Baca</a>
+                                        <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/download/<?= $row->id; ?>">Download</a>
                                     </td>
                                 </tr>
                             <?php
@@ -69,8 +69,8 @@
                                     <td><?= $row->nama_materi; ?></td>
                                     <td><?= $row->group_materi; ?></td>
                                     <td>
-                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview/<?= $row->id; ?>">Baca</a>
-                                        <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/dwonload/<?= $row->nama_materi; ?>">Download</a>
+                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/upload/<?= $row->nama_materi; ?>" target="_BLANK">Baca</a>
+                                        <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/dwonload/<?= $row->id; ?>">Download</a>
                                     </td>
                                 </tr>
                             <?php
@@ -100,8 +100,8 @@
                                     <td><?= $row->nama_materi; ?></td>
                                     <td><?= $row->group_materi; ?></td>
                                     <td>
-                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/materi/preview/<?= $row->id; ?>">Baca</a>
-                                        <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/download/<?= $row->nama_materi; ?>">Download</a>
+                                        <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/upload/<?= $row->nama_materi; ?>" target="_BLANK">Baca</a>
+                                        <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/download/<?= $row->id; ?>">Download</a>
                                     </td>
                                 </tr>
                             <?php

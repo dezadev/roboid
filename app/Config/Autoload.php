@@ -88,6 +88,7 @@ class Autoload extends AutoloadConfig
     public $files = [];
     // public $autoload['libraries'] = array ['database','session'];
 
-    // public $autoload ['libraries'] = array('database','session');
-
+    // public $autoload = [
+    //     'libraries' => array('database', 'url')
+    // ];
 }

@@ -13,6 +13,7 @@
                 $no  = null;
             foreach ($materi as $file)
             ?>
+            <a href="/upload/<?= $file->nama_materi; ?>" target="_BLANK">Klik di sini untuk membuka file</a>
             <object data="/upload/<?= $file->nama_materi; ?>" type="application/pdf" style="width:100%; height:500px;" frameborder="0"></iframe>
 
         </div>

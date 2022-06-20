@@ -1,12 +1,12 @@
 <?= $this->extend('template/_layout'); ?>
 
 <?= $this->section('content'); ?>
-<div class="container">
-    <!-- <div class="register-box"> -->
-    <div class="register-logo card mt-2">
-        <a href=""><b>Form</b> Register</a>
-    </div>
-    <div class="card mt-2">
+<div class="row">
+    <div class="container" style="width: 22rem;">
+        <!-- <div class="register-box"> -->
+        <div class="register-logo">
+            <a href="#"><b>Form</b> Register</a>
+        </div>
         <div class="card-body register-card-body card">
             <form method="post" action="<?= base_url(); ?>/register/process">
                 <?= csrf_field(); ?>
@@ -57,8 +57,11 @@
                 </div>
             </form>
         </div>
-
-    </div><!-- /.card -->
+    </div>
+    <!-- <div class="container" style="width: 22rem;">
+        <img src="<?= base_url(); ?>/dist/img/bg2.png" class="img-fluid">
+    </div> -->
 </div>
+
 
 <?= $this->endSection(); ?>

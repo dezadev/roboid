@@ -13,18 +13,21 @@ class Materi extends BaseController
 
     public function __construct()
     {
+        // $this->load->helper(array('url', 'download'));
+
         $this->materiModel = new MateriModel();
         $this->groupModel = new GroupModel();
+        $this->db      = \Config\Database::connect();
+        // $this->load->helper('download');
     }
     public function index()
     {
-        $curentPage = $this->request->getVar('page_orang') ? $this->request->getVar('page_orang') : 1;
-
+        $curentPage = $this->request->getVar('page_halaman') ? $this->request->getVar('page_halaman') : 1;
         $data = [
             'title' => 'MATERI',
-            'materi' => $this->materiModel->paginate(10, 'halaman'),
+            'materi' => $this->materiModel->paginate(5, 'halaman'),
             'pager' => $this->materiModel->pager,
-            'curentPage' => $curentPage
+            'curentPage' => $curentPage,
         ];
         return view('/materi/_view', $data);
     }
@@ -81,18 +84,6 @@ class Materi extends BaseController
 
         $data = $this->materiModel->find($id);
         return $this->response->download('upload/' . $data->nama_materi, null);
-    }
-    function preview($id)
-    {
-
-        $data = [
-            'title' => 'BACA',
-            // 'materi' => $this->materiModel->find($id),
-            'materi' => $this->materiModel->viewpdf($id),
-
-        ];
-        // dd($data);
-        return view('/materi/_preview', $data);
     }
     public function delete($id)
     {

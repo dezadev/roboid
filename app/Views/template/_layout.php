@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $title; ?></title>
 
+    <link rel="shortcut icon" type="image/png" href="/dist/img/ahass2.png" />
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
@@ -108,7 +109,7 @@
     <script src="<?= base_url(); ?>/plugins/chart.js/Chart.min.js"></script>
 
     <!-- AdminLTE for demo purposes -->
-    <script src="<?= base_url(); ?>/dist/js/demo.js"></script>
+    <!-- <script src="<?= base_url(); ?>/dist/js/demo.js"></script> -->
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="<?= base_url(); ?>/dist/js/pages/dashboard2.js"></script>
 
