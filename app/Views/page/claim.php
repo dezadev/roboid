@@ -13,8 +13,8 @@
             </nav>
             <div class="tab-content mt-2" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel">
-                    <table class="table table-bordered mt-2">
-                        <thead>
+                    <table class="table table-bordered mt-2 table-hover">
+                        <thead class="thead-light">
                             <tr>
                                 <th>No</th>
                                 <th>Nama Materi</th>
@@ -22,7 +22,7 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="table-sm">
 
                             <?php
                             $no  = 1;

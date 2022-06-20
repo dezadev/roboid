@@ -15,8 +15,8 @@
             <?php endif; ?>
             <a href="<?= base_url(); ?>/register/tambah" class="btn btn-primary btn-sm">Tambah User</a>
             <hr />
-            <table class="table table-bordered">
-                <thead>
+            <table class="table table-bordered table-hover">
+                <thead class="thead-light">
                     <tr>
                         <th>No</th>
                         <th>User Name</th>
@@ -25,7 +25,7 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-sm">
 
                     <?php
                     $i = 1;

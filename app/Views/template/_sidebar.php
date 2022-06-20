@@ -121,18 +121,6 @@
                         </ul>
                     </li>
                 <?php endif ?>
-
-                <?php if (is_null(session()->get('logged_in'))) :  ?>
-
-                    <li class="nav-item d-none d-sm-inline-block">
-                        <a href="/login" class="nav-link btn btn-outline-success mr-3">Login</a>
-                    </li>
-                <?php else : ?>
-
-                    <li class="nav-item d-none d-sm-inline-block">
-                        <a href="/logout" class="nav-link btn btn-outline-success mr-3">Logout</a>
-                    </li>
-                <?php endif ?>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

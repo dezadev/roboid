@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="card mt-3">
-        <div class="card-header ">
+        <div class="card-header">
             <h4><b>MASTER DATA GROUP</b></h4>
 
         </div>
@@ -16,15 +16,15 @@
             <?php endif; ?>
             <a href="<?= base_url(); ?>/group/create" class="btn btn-primary btn-sm">Tambah Group</a>
             <hr />
-            <table class="table table-bordered">
-                <thead>
+            <table class="table table-bordered table-hover">
+                <thead class="thead-light">
                     <tr>
                         <th>No</th>
                         <th>Group</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-sm">
                     <?php
                     $no  = 1;
                     foreach ($group as $gr) {

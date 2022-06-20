@@ -35,6 +35,7 @@ $routes->get('/register', 'Register::index');
 $routes->post('/register/process', 'Register::process');
 $routes->get('/login', 'Login::index');
 $routes->post('/login/process', 'Login::process');
+// $routes->get('', 'Login::process');
 
 
 $routes->get('/', 'Home::index');
