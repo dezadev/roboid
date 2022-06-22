@@ -11,5 +11,13 @@ class UsersModel extends Model
     protected $primaryKey = "username";
     protected $returnType = "object";
     protected $useTimestamps = true;
-    protected $allowedFields = ['username', 'password', 'name', 'role'];
+    protected $allowedFields = ['id', 'username', 'password', 'name', 'role'];
+
+    public function getUserModel($id)
+    {
+        if ($id == false) {
+            return $this->findAll();
+        }
+        return $this->where(['id' => $id])->first();
+    }
 }

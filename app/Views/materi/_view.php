@@ -38,7 +38,7 @@
                             <td>
                                 <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/upload/<?= $row->nama_materi; ?>" target="_BLANK">Baca</a>
                                 <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/download/<?= $row->id; ?>">Download</a>
-                                <!-- <a class="btn btn-danger" href="<?= base_url(); ?>/materi/delete/<?= $row->id; ?>">Delete</a> -->
+                                <!-- <a class="btn btn-success btn-sm" href="<?= base_url(); ?>/materi/edit/<?= $row->id; ?>">Edit</a> -->
                                 <form action="<?= base_url(); ?>/materi/delete/<?= $row->id; ?>" method="POST" class="d-inline">
                                     <?= csrf_field(); ?>
                                     <input type="hidden" name="_method" id="DELETE">

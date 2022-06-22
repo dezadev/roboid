@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\UsersModel;
-use Myth\Auth\Models\UserModel;
 
 class Register extends BaseController
 {
@@ -49,7 +48,6 @@ class Register extends BaseController
                 ]
             ],
             'role' => [
-                // 'rules' => 'required|min_length[1]|max_length[1]',
                 'errors' => [
                     'required' => '{field} Harus diisi',
                     'min_length' => '{field} Minimal 1 Karakter',
@@ -86,10 +84,33 @@ class Register extends BaseController
         session()->setFlashdata('success', 'User Berhasil ditambahkan');
         return redirect()->to('/register');
     }
-    public function delete($username)
+    public function delete($id)
     {
-        $this->userModel->delete($username);
+        $this->userModel->delete($id);
         session()->setFlashdata('success', 'data berhasil di hapus');
         return redirect()->to('/register');
+    }
+    public function edit($id)
+    {
+        $data = [
+            'title' => 'edit user',
+            'user' => $this->userModel->getUserModel($id)
+        ];
+
+        return view('auth/ed_user', $data);
+    }
+    public function update($id)
+    {
+        $this->userModel->save([
+            'id' => $id,
+            'name'  => $this->request->getVar('name'),
+            'username' => $this->request->getVar('username'),
+            'role' => $this->request->getVar('role'),
+            'password' => $this->request->getVar('password'),
+
+        ]);
+
+        session()->setFlashdata('success', 'user Berhasil diubah');
+        return redirect()->to(base_url('/register'));
     }
 }

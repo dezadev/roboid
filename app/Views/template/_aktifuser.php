@@ -1,7 +1,7 @@
 <li class="nav-item dropdown">
     <a class="nav-link" data-toggle="dropdown" href="#">
         <i class="far fa-user"></i>
-        <span class="badge badge-danger navbar-badge">3</span>
+        <span class="badge badge-danger navbar-badge"><?= session()->get('role'); ?></span>
     </a>
     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 

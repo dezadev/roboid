@@ -8,6 +8,7 @@
             <h4><b>MASTER DATA GROUP</b></h4>
 
         </div>
+
         <div class="card-body">
             <?php if (!empty(session()->getFlashdata('success'))) : ?>
                 <div class="alert alert-success" role="alert">
@@ -16,6 +17,7 @@
             <?php endif; ?>
             <a href="<?= base_url(); ?>/group/create" class="btn btn-primary btn-sm">Tambah Group</a>
             <hr />
+
             <table class="table table-bordered table-hover">
                 <thead class="thead-light">
                     <tr>
@@ -46,6 +48,7 @@
                     ?>
                 </tbody>
             </table>
+
         </div>
     </div>
 </div>

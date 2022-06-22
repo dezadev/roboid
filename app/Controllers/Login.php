@@ -14,6 +14,7 @@ class Login extends BaseController
         // Most services in this controller require
         // the session to be started - so fire it up!
         $this->session = service('session');
+        $this->userModel = new UsersModel();
 
         // $this->config = config('Auth');
         // $this->auth = service('authentication');

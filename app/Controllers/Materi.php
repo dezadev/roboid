@@ -13,12 +13,9 @@ class Materi extends BaseController
 
     public function __construct()
     {
-        // $this->load->helper(array('url', 'download'));
-
         $this->materiModel = new MateriModel();
         $this->groupModel = new GroupModel();
         $this->db      = \Config\Database::connect();
-        // $this->load->helper('download');
     }
     public function index()
     {
@@ -92,6 +89,24 @@ class Materi extends BaseController
 
         $this->materiModel->delete($id);
         session()->setFlashdata('success', 'data berhasil di hapus');
+        return redirect()->to('/materi');
+    }
+    public function edit($id)
+    {
+        $data = [
+            'title' => 'Edit Materi',
+            'materi' => $this->materiModel->getMateri($id),
+        ];
+
+        return view('materi/_edit', $data);
+    }
+    public function update($id)
+    {
+        // $this->materiModel->save([
+        //     'nama_materi' => $this->materiModel->getvar('nama_materi'),
+        //     'group_materi' => $this->materiModel->getvar('group_materi')
+        // ]);
+
         return redirect()->to('/materi');
     }
 }

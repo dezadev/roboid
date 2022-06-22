@@ -37,7 +37,7 @@
                             <td><?= $row->name; ?></td>
                             <td><?= $row->role; ?></td>
                             <td>
-                                <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/register/edit/<?= $row->username; ?>">Edit</a>
+                                <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/register/edit/<?= $row->id; ?>">Edit</a>
                                 <form action="<?= base_url(); ?>/register/delete/<?= $row->username; ?>" method="POST" class="d-inline">
                                     <?= csrf_field(); ?>
                                     <input type="hidden" name="_method" id="DELETE">

@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\MateriModel;
-// use App\Models\GroupModel;
+use App\Models\HomeModel;
 
 class Home extends BaseController
 {
@@ -13,6 +13,7 @@ class Home extends BaseController
     public function __construct()
     {
         $this->materiModel = new MateriModel();
+        $this->homeModel = new HomeModel();
         $this->db      = \Config\Database::connect();
         $this->builder = $this->db->table('materi');
     }
@@ -20,6 +21,7 @@ class Home extends BaseController
     {
         $data = [
             'title' => 'DASBOARD',
+            'user' => $this->homeModel->jumlah_user()
         ];
 
         // return view('template/_home', $data);

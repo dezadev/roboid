@@ -29,4 +29,11 @@ class MateriModel extends Model
             ->get()
             ->getResult();
     }
+    public function getMateri($id)
+    {
+        if ($id == false) {
+            return $this->findAll();
+        }
+        return $this->where(['id' => $id])->first();
+    }
 }
