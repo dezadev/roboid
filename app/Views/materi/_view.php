@@ -2,10 +2,10 @@
 
 <?= $this->section('content'); ?>
 
-<div class="container">
-    <div class="card mt-3">
+<div class="container register-card-body">
+    <div class="card">
         <div class="card-header">
-            <h4><b> DATA MATERI</b></h3>
+            <h4> DATA MATERI</h3>
         </div>
         <div class="card-body">
             <?php if (!empty(session()->getFlashdata('success'))) : ?>
@@ -36,14 +36,16 @@
                             <td><?= $row->nama_materi; ?></td>
                             <td><?= $row->group_materi; ?></td>
                             <td>
-                                <a class="btn btn-warning btn-sm" href="<?= base_url(); ?>/upload/<?= $row->nama_materi; ?>" target="_BLANK">Baca</a>
-                                <a class="btn btn-info btn-sm" href="<?= base_url(); ?>/materi/download/<?= $row->id; ?>">Download</a>
-                                <!-- <a class="btn btn-success btn-sm" href="<?= base_url(); ?>/materi/edit/<?= $row->id; ?>">Edit</a> -->
-                                <form action="<?= base_url(); ?>/materi/delete/<?= $row->id; ?>" method="POST" class="d-inline">
-                                    <?= csrf_field(); ?>
-                                    <input type="hidden" name="_method" id="DELETE">
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('apakah anda yakin');">Delete</button>
-                                </form>
+                                <a class="btn btn-warning btn-xs" href="<?= base_url(); ?>/upload/<?= $row->nama_materi; ?>" target="_BLANK">Baca</a>
+                                <a class="btn btn-info btn-xs" href="<?= base_url(); ?>/materi/download/<?= $row->id; ?>">Download</a>
+                                <?php if (session()->get('role') == 1) :  ?>
+                                    <a class="btn btn-success btn-xs" href="<?= base_url(); ?>/materi/edit/<?= $row->id; ?>">Edit</a>
+                                    <form action="<?= base_url(); ?>/materi/delete/<?= $row->id; ?>" method="POST" class="d-inline">
+                                        <?= csrf_field(); ?>
+                                        <input type="hidden" name="_method" id="DELETE">
+                                        <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('apakah anda yakin');">Delete</button>
+                                    </form>
+                                <?php endif; ?>
                             </td>
                         </tr>
                     <?php

@@ -1,10 +1,10 @@
 <?= $this->extend('template/_layout'); ?>
 
 <?= $this->section('content'); ?>
-<div class="container">
-    <div class="card mt-2">
+<div class="container register-card-body">
+    <div class="card">
         <div class="card-header">
-            <h2>FORM UPLOAD MATERI</h2>
+            <h4>FORM UPLOAD MATERI</h4>
         </div>
         <div class="card-body">
             <?php if (!empty(session()->getFlashdata('error'))) : ?>

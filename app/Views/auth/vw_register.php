@@ -3,11 +3,19 @@
 <?= $this->section('content'); ?>
 <div class="row">
     <div class="container" style="width: 22rem;">
+
         <!-- <div class="register-box"> -->
         <div class="register-logo">
             <a href="#"><b>Form</b> Register</a>
         </div>
+
         <div class="card-body register-card-body card">
+            <?php if (!empty(session()->getFlashdata('success'))) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo session()->getFlashdata('success'); ?>
+                </div>
+            <?php endif; ?>
+
             <form method="post" action="<?= base_url(); ?>/register/process">
                 <?= csrf_field(); ?>
                 <div class="input-group mb-3">
@@ -53,6 +61,9 @@
                 <div class="row">
                     <div class="col-4">
                         <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </div>
+                    <div class="col-4">
+                        <a href="/register" class="btn btn-info">kembali</a>
                     </div>
                 </div>
             </form>

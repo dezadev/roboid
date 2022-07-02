@@ -36,4 +36,11 @@ class MateriModel extends Model
         }
         return $this->where(['id' => $id])->first();
     }
+    public function Materi()
+    {
+        return $this->db->table('materi')
+            ->orderBy('group_materi', 'ASC')
+            ->get()
+            ->getResult();
+    }
 }

@@ -2,10 +2,10 @@
 
 <?= $this->section('content'); ?>
 
-<div class="container">
-    <div class="card mt-3">
+<div class="container register-card-body">
+    <div class="card">
         <div class="card-header">
-            <h4><b> EDIT USER</b></h3>
+            <h4>EDIT USER</h3>
         </div>
         <div class="card-body">
             <?php if (!empty(session()->getFlashdata('success'))) : ?>
@@ -31,7 +31,8 @@
                     <input type="hidden" id="password" name="password" rows="3" value="<?= $user->password; ?>" required></input>
                 </div>
                 <div class="mb-3">
-                    <input type="submit" class="btn btn-danger" value="simpan user" />
+                    <input type="submit" class="btn btn-danger btn-sm" value="Simpan" />
+                    <a href="/register" class="btn btn-info btn-sm">Batal</a>
                 </div>
 
             </form>

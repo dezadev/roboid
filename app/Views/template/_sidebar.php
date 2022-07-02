@@ -17,11 +17,12 @@
             </div>
         </div>
         <!-- Sidebar Menu -->
+
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                <?php if (session()->get('role') == 2) :  ?>
+                <?php if (session()->get('role') == 2) : ?>
                     <li class="nav-item menu-open">
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -33,26 +34,93 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="/home/asy" class="nav-link">
-                                    <i class="far fa-circle text-warning nav-icon"></i>
+                                    <i class="far fa-arrow-alt-circle-right text-warning nav-icon"></i>
                                     <p>NMS</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/home/claim" class="nav-link">
-                                    <i class="far fa-circle text-danger nav-icon"></i>
+                                    <i class="far fa-arrow-alt-circle-right text-danger nav-icon"></i>
                                     <p>WCL</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/home/lkh" class="nav-link">
-                                    <i class="far fa-circle text-info nav-icon"></i>
+                                    <i class="far fa-arrow-alt-circle-right text-info nav-icon"></i>
                                     <p>PQM</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/home/nsp" class="nav-link">
-                                    <i class="far fa-circle text-success nav-icon"></i>
+                                    <i class="far fa-arrow-alt-circle-right text-success nav-icon"></i>
                                     <p>NSP</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                <?php elseif (session()->get('role') == 3) : ?>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                MENU
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/home/asy" class="nav-link ">
+                                    <i class="far fa-arrow-alt-circle-right text-warning nav-icon"></i>
+                                    <p>NMS</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/home/claim" class="nav-link">
+                                    <i class="far fa-arrow-alt-circle-right text-danger nav-icon"></i>
+                                    <p>WCL</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/home/lkh" class="nav-link">
+                                    <i class="far fa-arrow-alt-circle-right text-info nav-icon"></i>
+                                    <p>PQM</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/home/nsp" class="nav-link">
+                                    <i class="far fa-arrow-alt-circle-right text-success nav-icon"></i>
+                                    <p>NSP</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- menu master data -->
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-edit"></i>
+                            <p>
+                                MASTER DATA
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/materi" class="nav-link ">
+                                    <i class="far fa-file-alt text-warning nav-icon"></i>
+                                    <p>MATERI</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/group" class="nav-link">
+                                    <!-- <i class="fal fa-file-archive"></i> -->
+                                    <i class="far fa-copy text-danger nav-icon"></i>
+                                    <p>GROUP</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/register" class="nav-link">
+                                    <i class="far fa-user text-info nav-icon"></i>
+                                    <p>USER</p>
                                 </a>
                             </li>
                         </ul>
@@ -68,53 +136,58 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/home/asy" class="nav-link">
-                                    <i class="far fa-circle text-warning nav-icon"></i>
+                                <a href="/home/asy" class="nav-link ">
+                                    <!-- <i class="far fa-arrow-alt-circle-right"></i> -->
+                                    <i class="far fa-arrow-alt-circle-right text-warning nav-icon"></i>
                                     <p>NMS</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/home/claim" class="nav-link">
-                                    <i class="far fa-circle text-danger nav-icon"></i>
+                                    <i class="far fa-arrow-alt-circle-right text-danger nav-icon"></i>
                                     <p>WCL</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/home/lkh" class="nav-link">
-                                    <i class="far fa-circle text-info nav-icon"></i>
+                                    <i class="far fa-arrow-alt-circle-right text-info nav-icon"></i>
                                     <p>PQM</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/home/nsp" class="nav-link">
-                                    <i class="far fa-circle text-success nav-icon"></i>
+                                    <i class="far fa-arrow-alt-circle-right text-success nav-icon"></i>
                                     <p>NSP</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <!-- menu master data -->
-                    <li class="nav-item">
+                    <li class="nav-item menu-open">
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fas fa-edit"></i>
-                            <p>MASTER DATA</p>
+                            <p>
+                                MASTER DATA
+                                <!-- <i class="right fas fa-angle-left"></i> -->
+                            </p>
                         </a>
-                        <ul class="nav">
+                        <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/materi" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                <a href="/materi" class="nav-link ">
+                                    <i class="far fa-file-alt text-warning nav-icon"></i>
                                     <p>MATERI</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/group" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <!-- <i class="fal fa-file-archive"></i> -->
+                                    <i class="far fa-copy text-danger nav-icon"></i>
                                     <p>GROUP</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/register" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="far fa-user text-info nav-icon"></i>
                                     <p>USER</p>
                                 </a>
                             </li>

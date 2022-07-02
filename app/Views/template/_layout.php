@@ -113,6 +113,33 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="<?= base_url(); ?>/dist/js/pages/dashboard2.js"></script>
 
+    <!-- coba link active -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('ul li a').click(function() {
+                $('li a').removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+    </script> -->
+
+    <!-- percobaan kedua -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+
+    <script type="text/javascript">
+        $(function() {
+            var path = window.location.href; // Mengambil data URL pada Address bar
+            $('nav a').each(function() {
+                // Jika URL pada menu ini sama persis dengan path...
+                if (this.href === path) {
+                    // Tambahkan kelas "active" pada menu ini
+                    $(this).addClass('active');
+                }
+            });
+        });
+    </script>
+
     <script>
         //menampilkan  nama file yg di upload
         function namaFile() {

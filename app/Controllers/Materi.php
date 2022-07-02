@@ -23,6 +23,7 @@ class Materi extends BaseController
         $data = [
             'title' => 'MATERI',
             'materi' => $this->materiModel->paginate(5, 'halaman'),
+            // 'materi' => $this->materiModel->materi(),
             'pager' => $this->materiModel->pager,
             'curentPage' => $curentPage,
         ];
@@ -96,16 +97,27 @@ class Materi extends BaseController
         $data = [
             'title' => 'Edit Materi',
             'materi' => $this->materiModel->getMateri($id),
+            'group' => $this->groupModel->findAll()
         ];
 
         return view('materi/_edit', $data);
     }
     public function update($id)
     {
-        // $this->materiModel->save([
-        //     'nama_materi' => $this->materiModel->getvar('nama_materi'),
-        //     'group_materi' => $this->materiModel->getvar('group_materi')
-        // ]);
+        $namaFile = $this->materiModel->find($id);
+        $fileName = 'upload/' . $namaFile->nama_materi;
+        $nama_materi = $this->request->getPost('nama_materi');
+
+        // $newname = rename($fileName, 'upload/' . $nama_materi);
+        // $new = $newname->getName('nama_materi');
+        $newname = move_uploaded_file($fileName, 'upload/' . $nama_materi);
+        $group_materi = $this->request->getPost('group_materi');
+        // dd($newname);
+        $this->materiModel->save([
+            'nama_materi' => $newname,
+            'group_materi' => $group_materi
+        ]);
+        session()->setFlashdata('success', 'data berhasil di ubah');
 
         return redirect()->to('/materi');
     }

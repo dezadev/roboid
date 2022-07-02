@@ -2,10 +2,10 @@
 <?= $this->section('content'); ?>
 
 
-<div class="container">
-    <div class="card mt-2">
+<div class="container register-card-body">
+    <div class="card">
         <div class="card-header">
-            <h2>EDIT MATERI</h2>
+            <h4>EDIT MATERI</h4>
         </div>
         <div class="card-body">
             <?php if (!empty(session()->getFlashdata('error'))) : ?>
@@ -19,11 +19,19 @@
                 <?= csrf_field(); ?>
                 <div class="mb-3">
                     <label for="group" class="form-label">Nama Materi</label>
-                    <input class="form-control" id="nama_materi" name="nama_materi" rows="3" value="" required></input>
+                    <input class="form-control" id="nama_materi" name="nama_materi" rows="3" value="<?= $materi->nama_materi; ?>" required></input>
                 </div>
                 <div class="mb-3">
-                    <label for="group" class="form-label">Group Materi</label>
-                    <input class="form-control" id="group_materi" name="group_materi" rows="3" value="" required></input>
+                    <label for="group_materi" class="form-label">Group Materi</label>
+
+                    <div>
+                        <select name="group_materi" id="group_materi" class="form-control">
+                            <option selected><?= $materi->group_materi; ?></option>
+                            <?php foreach ($group as $pilih) : ?>
+                                <option value="<?= $pilih->group_materi; ?>"><?= $pilih->group_materi; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
                 </div>
                 <div class="mb-3">
                     <input type="submit" class="btn btn-danger" value="simpan" />

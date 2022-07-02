@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Google Font: Source Sans Pro -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="<?= base_url(); ?>/../../plugins/fontawesome-free/css/all.min.css">
+<!-- icheck bootstrap -->
+<link rel="stylesheet" href="<?= base_url(); ?>/../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="<?= base_url(); ?>/../../dist/css/adminlte.min.css">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login Page</title>
 
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?= base_url(); ?>/../../plugins/fontawesome-free/css/all.min.css">
-    <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="<?= base_url(); ?>/../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="<?= base_url(); ?>/../../dist/css/adminlte.min.css">
-</head>
-
-<body background="/dist/img/bg4.jpg" class="hold-transition register-page image-fluid">
+<div class="hold-transition register-page bg-img">
     <div class="login-box">
         <div class="login-logo card">
             <a href="/login"><b>Form</b> Login</a>
@@ -85,13 +77,28 @@
             <!-- /.login-card-body -->
         </div>
     </div>
+</div>
 
-    <!-- jQuery -->
-    <script src="<?= base_url(); ?>/../../plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="<?= base_url(); ?>/../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="<?= base_url(); ?>/../../dist/js/adminlte.min.js"></script>
-</body>
+<!-- jQuery -->
+<script src="<?= base_url(); ?>/../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="<?= base_url(); ?>/../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?= base_url(); ?>/../../dist/js/adminlte.min.js"></script>
 
-</html>
+<style type="text/css">
+    .bg-img {
+        /* The image used */
+        background-image: url("/dist/img/bg4.jpg");
+        height: 100%;
+        width: auto;
+        /* Control the height of the image */
+        min-height: 380px;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+</style>

@@ -2,13 +2,11 @@
 
 <?= $this->section('content'); ?>
 
-<div class="container">
-    <div class="card mt-3">
+<div class="container register-card-body">
+    <div class="card">
         <div class="card-header">
-            <h4><b>MASTER DATA GROUP</b></h4>
-
+            <h4>MASTER DATA GROUP</h4>
         </div>
-
         <div class="card-body">
             <?php if (!empty(session()->getFlashdata('success'))) : ?>
                 <div class="alert alert-success" role="alert">
@@ -23,7 +21,9 @@
                     <tr>
                         <th>No</th>
                         <th>Group</th>
-                        <th>Action</th>
+                        <?php if (session()->get('role') == 1) :  ?>
+                            <th>Action</th>
+                        <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody class="table-sm">
@@ -34,14 +34,16 @@
                         <tr>
                             <td><?= $no++; ?></td>
                             <td><?= $gr->group_materi; ?></td>
-                            <td>
-                                <form action="<?= base_url(); ?>/group/delete/<?= $gr->id; ?>" method="POST" class="d-inline">
-                                    <?= csrf_field(); ?>
-                                    <input type="hidden" name="_method" id="DELETE">
-                                    <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin');">Delete</button>
-                                </form>
-                                <a class="btn btn-warning" href="<?= base_url(); ?>/group/edit/<?= $gr->id; ?>">Edit</a>
-                            </td>
+                            <?php if (session()->get('role') == 1) :  ?>
+                                <td>
+                                    <form action="<?= base_url(); ?>/group/delete/<?= $gr->id; ?>" method="POST" class="d-inline">
+                                        <?= csrf_field(); ?>
+                                        <input type="hidden" name="_method" id="DELETE">
+                                        <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('apakah anda yakin');">Delete</button>
+                                    </form>
+                                    <a class="btn btn-warning btn-xs" href="<?= base_url(); ?>/group/edit/<?= $gr->id; ?>">Edit</a>
+                                </td>
+                            <?php endif; ?>
                         </tr>
                     <?php
                     }

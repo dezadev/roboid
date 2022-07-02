@@ -13,7 +13,6 @@
                 <div class="nav nav-tabs" id="nav-tab">
                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab">PANDUAN ASY</a>
                     <a class="nav-item nav-link" id="nav-profil-tab" data-toggle="tab" href="#nav-profil" role="tab">PANDUAN ASMO ID</a>
-                    <!-- <a class="nav-item nav-link" id="nav-kontak-tab" data-toggle="tab" href="#nav-kontak" role="tab">Kontak</a> -->
                 </div>
             </nav>
             <div class="tab-content mt-2" id="nav-tabContent">
